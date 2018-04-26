@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Fichier échantillon XML généré par XMLSpy v2018 sp1 (x64) (http://www.altova.com)-->
+<Factures xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="factures_scan.xsd">
+	<Facture>
+		<Description>
+			<NumeroFacture>2018-005966</NumeroFacture>
+			<NumeroCockpit>0123456</NumeroCockpit>
+			<TypeDocument>A</TypeDocument>
+		</Description>
+		<Lot>SCAN1_1235464_20180321</Lot>
+		<Dates>
+			<DateFacture>2018-03-19</DateFacture>
+		</Dates>
+		<Fournisseur>
+			<Nom>NEURONEXION</Nom>
+		</Fournisseur>
+		<Acheteur>
+			<Nom>CLS REMY COINTREAU</Nom>
+		</Acheteur>
+		<Montants>
+			<MontantTTC>1652.35</MontantTTC>
+		</Montants>
+		<ImageFacture>
+			<Fichier Type="Facture">DEMABOX000000009.pdf</Fichier>
+		</ImageFacture>
+	</Facture>
+</Factures>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Factures xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="factures_scan.xsd">
+	<Facture>
+		<Description>
+			<NumeroFacture>FA125263</NumeroFacture>
+			<NumeroCockpit>123456</NumeroCockpit>
+			<TypeDocument>F</TypeDocument>
+		</Description>
+		<Lot>mail131354678676_20180313</Lot>
+		<Dates>
+			<DateFacture>2018-08-13</DateFacture>
+			<DateReception>2018-08-13</DateReception>
+		</Dates>
+		<Fournisseur>
+			<Nom>EDF</Nom>
+		</Fournisseur>
+		<Acheteur>
+			<Nom>CLS REMY COINTREAU</Nom>
+		</Acheteur>
+		<Montants>
+			<MontantTTC>3000.00</MontantTTC>
+		</Montants>
+		<ImageFacture>
+			<Fichier Type="Facture">DEMABOX000000008.pdf</Fichier>
+			<Fichier Type="Mail">mail131354678676.html</Fichier>
+			<Fichier Type="Log">log1232.pdf</Fichier>
+		</ImageFacture>
+	</Facture>
+</Factures>

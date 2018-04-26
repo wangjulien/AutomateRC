@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- édité avec XMLSpy v2018 sp1 (x64) (http://www.altova.com) par MARAN (julie) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Factures">
+		<xs:annotation>
+			<xs:documentation>Import de factures</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Facture" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Description" minOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NumeroFacture" minOccurs="1">
+											<xs:annotation>
+												<xs:documentation>Numéro de la facture ou de la pièce comptable (avoir,acompte,...)</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="20"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="NumeroCockpit" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Numéro de la facture ou de la pièce dans SAP</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="20"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="NumeroFactureAcompte" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Numéro de la facture du fournisseur dans le cas d'une demande d'acompte</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="TypeDocument" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Indique s'il s'agit d'une facture F ou d'un avoir A</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="1"/>
+													<xs:whiteSpace value="collapse"/>
+													<xs:enumeration value="F"/>
+													<xs:enumeration value="A"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Lot" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Identifiant du lot de numérisation ou du mail
+									</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="100"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Dates" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DateFacture" type="xs:string" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Date de la facture au format AAAA-MM-JJ
+												</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="DateReception" type="xs:string" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Date de réception au format AAAA-MM-JJ
+												</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Fournisseur" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Nom" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Raison sociale du fournisseur
+												</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="100"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="NumeroExt" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Numéro du tiers dans logiciel SAP
+												</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="32"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Acheteur" minOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Nom" minOccurs="1">
+											<xs:annotation>
+												<xs:documentation>Raison sociale de l'acheteur
+												</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="100"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="NumeroExt" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Numéro du tiers dans logiciel SAP
+												</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="32"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Montants" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="MontantTTC" type="xs:double" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Montant TTC de la facture</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ImageFacture" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Fichier" maxOccurs="1">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="Type" type="Type_fichier"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="Type_fichier">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Facture"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
